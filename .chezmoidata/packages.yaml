@@ -1,0 +1,18 @@
+packages:
+  darwin:
+    taps:
+    - 'PeonPing/tap'
+    brews:
+    - 'delta'
+    - 'git'
+    - 'peon-ping'
+    - 'powerlevel10k'
+    casks:
+    - 'claude-code'
+    - 'ghostty'
+    - 'google-cloud-sdk'
+    - 'helium-browser'
+    - 'jq'
+    - 'monitorcontrol'
+    - 'raycast'
+    - 'zen'
