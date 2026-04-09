@@ -30,7 +30,8 @@
 	helper = osxkeychain
 [user]
 	name = Mansour J. Mansour
-	email = mansour@mjmonline.se
+[includeIf "gitdir:~/Developer/oss/"]
+	path = ~/.gitconfig_oss
 [includeIf "gitdir:~/Developer/nordnet/"]
 	path = ~/.gitconfig_nordnet
 [hub]
