@@ -13,7 +13,7 @@ Darwin)
     read -r dummy
     ;;
 *)
-    echo "unsupported OS"
-    exit 1
+    echo "Skipping 1Password install on $(uname -s)"
+    exit 0
     ;;
 esac

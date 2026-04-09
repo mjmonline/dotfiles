@@ -23,8 +23,10 @@
 	status = auto
 	branch = auto
 	diff = auto
+{{- if eq .chezmoi.os "darwin" }}
 [credential]
 	helper = osxkeychain
+{{- end }}
 [user]
 	name = Mansour J. Mansour
 {{- if .isWorkComputer}}
