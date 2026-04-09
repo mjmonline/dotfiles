@@ -1,0 +1,39 @@
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[core]
+	editor = code --wait
+	excludesfile = ~/.gitignore_global
+	pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+	side-by-side = true
+    navigate = true    # use n and N to move between diff sections
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    # light = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+[push]
+	default = simple
+	followTags = true
+	autoSetupRemote = true
+[color]
+	ui = auto
+	status = auto
+	branch = auto
+	diff = auto
+[credential]
+	helper = osxkeychain
+[user]
+	name = Mansour J. Mansour
+	email = mansour@mjmonline.se
+[includeIf "gitdir:~/Developer/nordnet/"]
+	path = ~/.gitconfig_nordnet
+[hub]
+	protocol = ssh
+[alias]
+	undo = reset --mixed HEAD^
