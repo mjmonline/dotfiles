@@ -30,10 +30,14 @@
 	helper = osxkeychain
 [user]
 	name = Mansour J. Mansour
+{{- if .isWorkComputer}}
 [includeIf "gitdir:~/Developer/oss/"]
 	path = ~/.gitconfig_oss
 [includeIf "gitdir:~/Developer/nordnet/"]
 	path = ~/.gitconfig_nordnet
+{{- else }}
+  path = ~/.gitconfig_oss
+{{- end }}
 [hub]
 	protocol = ssh
 [alias]
