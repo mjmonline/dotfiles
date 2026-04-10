@@ -124,8 +124,6 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 
 {{- if and .isWorkComputer (eq .chezmoi.os "darwin") }}
-source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-
 # Add aliases
 alias k="kubectl"
 alias kx="kubectl ctx"
