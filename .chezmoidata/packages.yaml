@@ -9,7 +9,6 @@ packages:
     - 'ghostty'
     - 'google-cloud-sdk'
     - 'helium-browser'
-    - 'jq'
     - 'monitorcontrol'
     - 'raycast'
     - 'zen'
