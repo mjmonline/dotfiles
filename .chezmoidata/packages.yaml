@@ -1,11 +1,8 @@
 packages:
   darwin:
-    taps:
-    - 'PeonPing/tap'
     brews:
     - 'delta'
     - 'git'
-    - 'peon-ping'
     - 'powerlevel10k'
     casks:
     - 'claude-code'
