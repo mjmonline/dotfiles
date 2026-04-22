@@ -1,14 +1,14 @@
 packages:
   darwin:
     brews:
-    - 'delta'
-    - 'git'
-    - 'powerlevel10k'
+      - "delta"
+      - "git"
+      - "starship"
     casks:
-    - 'claude-code'
-    - 'ghostty'
-    - 'google-cloud-sdk'
-    - 'helium-browser'
-    - 'monitorcontrol'
-    - 'raycast'
-    - 'zen'
+      - "claude-code"
+      - "ghostty"
+      - "google-cloud-sdk"
+      - "helium-browser"
+      - "monitorcontrol"
+      - "raycast"
+      - "zen"
