@@ -19,17 +19,8 @@
 	name = Mansour J. Mansour
 	email = mansour@mjmonline.se
 {{- if .isWorkComputer}}
-	signingkey = {{ onepasswordRead "op://Nordnet/SSH Key Mac/public key" }}
 [includeIf "gitdir:~/Developer/nordnet/"]
 	path = ~/.gitconfig_nordnet
 {{- end }}
 [alias]
 	undo = reset --mixed HEAD^
-{{- if .isWorkComputer}}
-[gpg]
-	format = ssh
-[gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
-[commit]
-	gpgsign = true
-{{- end }}

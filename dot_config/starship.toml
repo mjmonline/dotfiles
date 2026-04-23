@@ -1,12 +1,13 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+palette = 'synthwave'
+
 format = """
 $directory\
-[](bg:yellow fg:peach)\
+[](bg:pill_secondary fg:pill_primary)\
 $git_branch\
 $git_status\
-[ ](fg:yellow)\
-$line_break\
+[ ](fg:pill_secondary)\
 $character"""
 
 right_format = """
@@ -14,10 +15,8 @@ $cmd_duration\
 $time\
 """
 
-palette = 'catppuccin_mocha'
-
 [directory]
-style = "bg:peach fg:crust"
+style = "bg:pill_primary fg:pill_primary_text"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -31,68 +30,63 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:yellow"
-format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
+style = "fg:pill_secondary_text bg:pill_secondary"
+format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:yellow"
-format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
-
-[docker_context]
-symbol = ""
-style = "bg:sapphire"
-format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
+format = '([ $conflicted$stashed$deleted$renamed$modified$typechanged$staged$untracked$ahead_behind ]($style))'
+style = "bg:pill_secondary"
+conflicted    = "[=${count}](fg:danger bg:pill_secondary)"
+stashed       = "[\\$${count}](fg:info bg:pill_secondary)"
+deleted       = "[✘${count}](fg:danger bg:pill_secondary)"
+renamed       = "[»${count}](fg:accent bg:pill_secondary)"
+modified      = "[!${count}](fg:warning bg:pill_secondary)"
+typechanged   = "[±${count}](fg:attention bg:pill_secondary)"
+staged        = "[+${count}](fg:success bg:pill_secondary)"
+untracked     = "[?${count}](fg:notice bg:pill_secondary)"
+ahead         = "[⇡${count}](fg:success bg:pill_secondary)"
+behind        = "[⇣${count}](fg:attention bg:pill_secondary)"
+diverged      = "[⇡${count_ahead}⇣${count_behind}](fg:info bg:pill_secondary)"
 
 [time]
 disabled = false
 time_format = "%R"
-style = "fg:lavender"
-format = '[[  $time ](fg:lavender)]($style)'
-
-[line_break]
-disabled = true
+style = "fg:muted"
+format = '[  $time ]($style)'
 
 [character]
 disabled = false
 success_symbol = '[❯](bold fg:green)'
 error_symbol = '[❯](bold fg:red)'
-vimcmd_symbol = '[❮](bold fg:green)'
-vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
-vimcmd_replace_symbol = '[❮](bold fg:lavender)'
-vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 
 [cmd_duration]
-show_milliseconds = true
-format = "$duration "
-style = "bg:lavender"
-disabled = false
-show_notifications = true
-min_time_to_notify = 45000
+style = "fg:notice"
+format = '[ $duration ]($style)'
 
-[palettes.catppuccin_mocha]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+[palettes.night_owl]
+pill_primary = "#82aaff"
+pill_primary_text = "#011627"
+pill_secondary = "#1d3b53"
+pill_secondary_text = "#22da6e"
+muted = "#637777"
+success = "#22da6e"
+danger = "#ef5350"
+warning = "#c5e478"
+attention = "#f78c6c"
+notice = "#7fdbca"
+info = "#c792ea"
+accent = "#82aaff"
+
+[palettes.synthwave]
+pill_primary = "#12c3e2"
+pill_primary_text = "#000000"
+pill_secondary = "#2a1b3d"
+pill_secondary_text = "#1ebb2b"
+muted = "#7f7094"
+success = "#1ebb2b"
+danger = "#f6188f"
+warning = "#fdf834"
+attention = "#f85a21"
+notice = "#f841a0"
+info = "#12c3e2"
+accent = "#2186ec"

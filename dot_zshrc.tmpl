@@ -116,6 +116,10 @@ alias brewup='brew update && brew upgrade && brew upgrade --cask --greedy && bre
 {{- end }}
 
 {{- if and .isWorkComputer (eq .chezmoi.os "darwin") }}
+# peon-ping quick controls
+alias peon="bash $HOME/.claude/hooks/peon-ping/peon.sh"
+[ -f $HOME/.claude/hooks/peon-ping/completions.bash ] && source $HOME/.claude/hooks/peon-ping/completions.bash
+
 # Add aliases
 alias k="kubectl"
 alias kx="kubectl ctx"
